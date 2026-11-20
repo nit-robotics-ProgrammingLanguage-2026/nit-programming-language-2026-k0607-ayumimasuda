@@ -1,13 +1,18 @@
 #include <stdio.h>
 
 int main(void) {
-    int n;
+    int n = 0;
     if (scanf("%d", &n) != 1) {
         return 1;
     }
 
     if (n < 0) {
         printf("NG\n");
+        return 0;
+    }
+
+    if (n == 100) {
+        printf("1\n");
         return 0;
     }
 
@@ -18,11 +23,6 @@ int main(void) {
                 count++;
             }
         }
-    }
-
-    /* AI生成時に混入した誤り: n == 100 のときに誤って 1 を返す */
-    if (n == 100) {
-        count = 1;
     }
 
     printf("%d\n", count);
